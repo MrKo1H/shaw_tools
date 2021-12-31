@@ -9,7 +9,6 @@ class User(models.Model):
 	credit   = models.IntegerField(default=0)
 	create   = models.DateTimeField(auto_now_add=True, null=True)
 	last_use = models.DateTimeField(auto_now=True)
-
 	def __str__(self):
 		return self.username
 
@@ -22,3 +21,9 @@ class Bill(models.Model):
 
 	def __str__(self):
 		return self.bill_id
+
+class Device(models.Model):
+	device_id = models.CharField(max_length=200)	
+	tool_name = models.CharField(max_length=200)
+	def __str__(self):
+		return self.device_id
